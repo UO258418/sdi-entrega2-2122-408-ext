@@ -63,6 +63,7 @@ app.use("/request/list", userSessionRouter);
 const adminUserRouter = require("./routes/adminUserRouter");
 app.use("/admin/list", adminUserRouter);
 app.use("/admin/delete", adminUserRouter);
+app.use("/admin/duplicate", adminUserRouter);
 
 const userTokenRouter = require("./routes/userTokenRouter");
 app.use("/api/v1.0/messages/add", userTokenRouter);
