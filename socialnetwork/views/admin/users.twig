@@ -15,12 +15,15 @@
             <tbody>
             {% for user in users %}
 
-            <tr>
+            <td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.surname }}</td>
                 {% if user.role != "admin" %}
-                    <td ><input type="checkbox" name="deleteBox" id="{{ user.name }}" value="{{ user._id }}"/></td>
+                    <td><input type="checkbox" name="deleteBox" id="{{ user.name }}" value="{{ user._id }}"/></td>
+                    <td>
+                        <a name="duplicateBtn" id="{{ user.name }}" value="{{ user._id }}" href="/admin/duplicate/{{ user._id }}">Duplicate user</a>
+                    </td>
                 {% endif %}
             </tr>
             {% endfor %}
